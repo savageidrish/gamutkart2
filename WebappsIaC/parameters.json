@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sites_idrgamutkart_name": {
-            "value": null
+            "value": "idrgamutkart"
         },
         "serverfarms_ASP_gamutkarttest_aea9_externalid": {
-            "value": null
+            "value": "/subscriptions/2820a7ce-23ca-4544-81ec-2e0291436339/resourceGroups/gamutkart_test/providers/Microsoft.Web/serverfarms/ASP-gamutkarttest-aea9"
         }
     }
 }
