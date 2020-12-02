@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "2820a7ce-23ca-4544-81ec-2e0291436339"
+        },
+        "name": {
+            "value": "idrgamutkart"
+        },
+        "location": {
+            "value": "Central US"
+        },
+        "hostingPlanName": {
+            "value": "ASP-gamutkarttest-9d8b"
+        },
+        "serverFarmResourceGroup": {
+            "value": "gamutkart_test"
+        },
+        "alwaysOn": {
+            "value": true
+        },
+        "sku": {
+            "value": "PremiumV2"
+        },
+        "skuCode": {
+            "value": "P1v2"
+        },
+        "workerSize": {
+            "value": "3"
+        },
+        "workerSizeId": {
+            "value": "3"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "TOMCAT|9.0-java11"
+        }
+    }
+}
