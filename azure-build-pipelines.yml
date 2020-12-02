@@ -25,3 +25,8 @@ steps:
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**/*.war'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'snapshot1.1'
+    publishLocation: 'Container'
