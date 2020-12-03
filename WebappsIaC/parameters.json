@@ -12,25 +12,25 @@
             "value": "Central US"
         },
         "hostingPlanName": {
-            "value": "ASP-gamutkarttest-9d8b"
+            "value": "ASP-gamutkarttest-8fba"
         },
         "serverFarmResourceGroup": {
             "value": "gamutkart_test"
         },
         "alwaysOn": {
-            "value": true
+            "value": false
         },
         "sku": {
-            "value": "PremiumV2"
+            "value": "Free"
         },
         "skuCode": {
-            "value": "P1v2"
+            "value": "F1"
         },
         "workerSize": {
-            "value": "3"
+            "value": "0"
         },
         "workerSizeId": {
-            "value": "3"
+            "value": "0"
         },
         "numberOfWorkers": {
             "value": "1"
