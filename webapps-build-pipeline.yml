@@ -1,0 +1,42 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- none
+
+stages:
+- stage: Dev
+  displayName: "Dev"
+  variables:
+  - group: 'Webapps Dev'
+
+  jobs:
+    - deployment: 'WebappsDeployment'
+      displayName: 'Provisioning of Webapp using ARM'
+      pool:
+        vmImage: 'ubuntu-latest'
+      # Creates an environment if it doesn't exist.
+      environment: 'Dev'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureResourceManagerTemplateDeployment@3
+              inputs:
+                deploymentScope: 'Resource Group'
+                azureResourceManagerConnection: 'Pay-As-You-Go (2820a7ce-23ca-4544-81ec-2e0291436339)'
+                subscriptionId: '2820a7ce-23ca-4544-81ec-2e0291436339'
+                action: 'Create Or Update Resource Group'
+                resourceGroupName: 'gamutkart_dev'
+                location: 'West US'
+                templateLocation: 'Linked artifact'
+                csmFile: '$(Build.SourcesDirectory)/WebappsIaC/template.json'
+                csmParametersFile: '$(Build.SourcesDirectory)/WebappsIaC/parameters.json'
+                overrideParameters: '-subscriptionId "$(subscriptionId)" -name "$(name)" -location "$(location)" -hostingPlanName "$(hostingPlanName)" -serverFarmResourceGroup "$(serverFarmResourceGroup)" -alwaysOn "$(alwaysOn)" -sku "$(sku)" -skuCode "$(skuCode)" -workerSize "$(workerSize)" -workerSizeId "$(workerSizeId)" -numberOfWorkers "$(numberOfWorkers)" -linuxFxVersion "$(linuxFxVersion)"'
+                deploymentMode: 'Incremental'
+            
+
+
+
